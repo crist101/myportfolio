@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import './style.sass';
+import React, { useState } from 'react';
+import useThemeDetector from './components/checkTheme';
 
 function App() {
+  const isDarkTheme = useThemeDetector()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <ul>
+          <li>
+            My Portfolio
+          </li>
+          <li>
+            Projects
+          </li>
+          <li>
+            Skills
+          </li>
+        </ul>
+      </nav>
+      <main>
+      <p>The current Theme is {isDarkTheme?"dark":"light"}</p>
+      </main>
+    </>
   );
 }
 
